@@ -9,4 +9,6 @@ urlpatterns = [
     path("myfeed", views.myfeed, name="myfeed"),
     path("newpost", views.new_post, name="new_post"),
     path("comments/<int:post_id>/", views.comments, name="comments"),
+    path("friendsfeed/", views.friendsfeed, name="friendsfeed"),
+    path("friends/", views.friends, name="friends"),
 ]
