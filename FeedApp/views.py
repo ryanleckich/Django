@@ -42,11 +42,13 @@ def myfeed(request):
     comment_count_list = []
     like_count_list = []
     posts = Post.objects.filter(username=request.user).order_by("-date_posted")
+    # grab all the posts that belong to a certain user # descending order by date
     for p in posts:
-        c_count = Comment.objects.filter(post=p).count()
+        c_count = Comment.objects.filter(post=p).count()  # number of comments
         l_count = Like.objects.filter(post=p).count()
-        comment_count_list.append(l_count)
+        comment_count_list.append(c_count)
         like_count_list.append(l_count)
+
     zipped_list = zip(posts, comment_count_list, like_count_list)
 
     context = {"posts": posts, "zipped_list": zipped_list}
