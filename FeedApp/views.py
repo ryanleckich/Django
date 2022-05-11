@@ -12,7 +12,11 @@ from django.http import Http404
 # When a URL request matches the pattern we just defined,
 # Django looks for a function called index() in the views.py file.
 
+# Create all the functions available for the user to use on the app. (friends, friendsfeed, myfeed…)
+# What each function consists of.
 
+
+# FUNCTIONS
 def index(request):
     """The home page for Learning Log."""
     return render(request, "FeedApp/index.html")
@@ -182,6 +186,7 @@ def friends(request):
             # add the user to the friends list of the senders profile
             relationship_obj.sender.friends.add(request.user)
 
+    # dictionary
     context = {
         "user_friends_profiles": user_friends_profiles,
         "user_relationships": user_relationships,

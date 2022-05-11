@@ -12,3 +12,9 @@ urlpatterns = [
     path("friendsfeed/", views.friendsfeed, name="friendsfeed"),
     path("friends/", views.friends, name="friends"),
 ]
+
+
+# First you do!!
+
+
+# Creates the link at the top of the path to click on the individual hyperlinks
